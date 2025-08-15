@@ -47,11 +47,11 @@ namespace EngineData
      */
     enum class UniqueArtifactType
     {
-        WEAPON,     //< Arma
-        ARMOR,      //< Armadura
-        VEHICLE,    //< Vehículo
-        RELIC,      //< Reliquia
-        TECHNOLOGY, //< Tecnología
+        WEAPON,  //< Arma
+        ARMOR,   //< Armadura
+        VEHICLE, //< Vehículo
+        RELIC,   //< Reliquia
+        TECH,    //< Tecnología
     };
 
     /**
@@ -169,7 +169,7 @@ namespace EngineData
                 case EngineData::UniqueArtifactType::ARMOR: return "Armadura";
                 case EngineData::UniqueArtifactType::VEHICLE: return "Vehículo";
                 case EngineData::UniqueArtifactType::RELIC: return "Reliquia";
-                case EngineData::UniqueArtifactType::TECHNOLOGY: return "Tecnología";
+                case EngineData::UniqueArtifactType::TECH: return "Tecnología";
                 default: return "Unknown";
             }
         }
