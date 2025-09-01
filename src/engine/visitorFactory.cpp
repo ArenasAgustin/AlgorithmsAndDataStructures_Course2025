@@ -57,7 +57,15 @@ NPC::VisitanteVariant VisitorFactory::create(EngineData::Faction faction)
                  auto bag = self->bagGenerator(isFromVault);
                  return Refugee(fullName, isFromVault, bag);
              }},
-        };
+            {EngineData::Faction::ENCLAVE,
+             [](VisitorFactory* self)
+             {
+                 auto name = self->m_randomGenetor->randomChoice(MERCHANTS);
+                 auto fuerza = self->m_randomGenetor->getDouble(1.0, self->m_config->fight.enemyAttackMultiplier * 2);
+                 bool detectado = self->m_randomGenetor->chance(0.5);
+                 double detectionChance = self->m_randomGenetor->getDouble(0.1, 0.4);
+                 return Enclave(name, fuerza, detectado, self->m_randomGenetor, detectionChance);
+             }}};
 
     auto itMap = FACTORY_MAP.find(faction);
     if (itMap != FACTORY_MAP.end())

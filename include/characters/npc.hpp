@@ -2,13 +2,14 @@
 #define NPC_TYPES_HPP
 
 #include "characters/asaltante.hpp"
+#include "characters/enclave.hpp"
 #include "characters/refugiado.hpp"
 #include <cstdint>
 #include <variant>
 
 namespace NPC
 {
-    using VisitanteVariant = std::variant<Refugee, Raider>;
+    using VisitanteVariant = std::variant<Refugee, Raider, Enclave>;
 
     /**
      * @brief: Categorías posibles de visitantes para el sistema de eventos

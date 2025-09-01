@@ -50,7 +50,8 @@ void EventManager::start()
                             case NPC::VisitantCategory::REFUGEE: faction = EngineData::Faction::REFUGEES; break;
                             case NPC::VisitantCategory::ENEMY:
                             {
-                                std::vector<EngineData::Faction> enemies = {EngineData::Faction::RAIDERS};
+                                std::vector<EngineData::Faction> enemies = {EngineData::Faction::RAIDERS,
+                                                                            EngineData::Faction::ENCLAVE};
                                 faction = m_engine->wrapperRandomChoice(enemies);
                                 break;
                             }

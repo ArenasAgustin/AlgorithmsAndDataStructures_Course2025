@@ -61,6 +61,11 @@ void Refugio::registerVisitant(const NPC::VisitanteVariant& visitante)
                 visitor.showInfo();
                 m_refugees.push_back(visitor);
             }
+            else if constexpr (std::is_same_v<VisitorType, Enclave>)
+            {
+                std::cout << " 🔺 ENCLAVE detecta problemas... " << '\n';
+                visitor.showInfo();
+            }
             else
             {
                 std::cout << "👀 Visitante sin comportamiento definido." << '\n';
